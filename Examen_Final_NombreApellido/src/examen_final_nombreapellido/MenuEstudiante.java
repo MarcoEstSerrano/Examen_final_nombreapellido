@@ -26,7 +26,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
         
     }
     
-    
+    // clase incompleta, por cuestion de tiempo y capacidad no la pude terminar.
     
   
     
