@@ -12,7 +12,7 @@ public abstract class Persona {
     private String nombreCompleto;
     private int edad;
 
-    public Persona(String nombreCompleto, int edad) {
+    public Persona(String nombreCompleto, int edad) { // formula para ver si los espacios estan vacios 
         if (nombreCompleto.isEmpty() || edad <= 0) {
             throw new IllegalArgumentException("Datos inválidos para la persona.");
         }
@@ -24,7 +24,19 @@ public abstract class Persona {
         return nombreCompleto;
     }
 
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
     public int getEdad() {
         return edad;
     }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    
+
+    
 }

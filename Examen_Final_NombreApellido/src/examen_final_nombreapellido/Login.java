@@ -10,11 +10,11 @@ public class Login extends javax.swing.JFrame {
 
     private ArrayList<Usuario> usuariosPredefinidos = new ArrayList<>();
     
+    //primero la creacion de los usuarios y sus respectivas contraseñas
     public Login() {
         initComponents();
         usuariosPredefinidos.add(new Usuario("admin", "admin12345", "Administrador"));
-        usuariosPredefinidos.add(new Usuario("estudiante1", "pass123456", "Estudiante"));
-        usuariosPredefinidos.add(new Usuario("estudiante2", "password123", "Estudiante"));
+        usuariosPredefinidos.add(new Usuario("estudiante", "pass123456", "Estudiante"));
     }
 
    
@@ -97,9 +97,9 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String usuarioIngresado = txtUsuario.getText().trim();
-        String contrasenaIngresada = new String(Password.getPassword()).trim();
+        String contrasenaIngresada = new String(Password.getPassword()).trim(); // el trim quita los espacios innecesarios en la cadena de texto
         
-        if (usuarioIngresado.isEmpty() || contrasenaIngresada.isEmpty()) {
+        if (usuarioIngresado.isEmpty() || contrasenaIngresada.isEmpty()) { //esto verifica si esta vacio con la ayuda de .Empty
         javax.swing.JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         return;
     }
@@ -109,7 +109,7 @@ public class Login extends javax.swing.JFrame {
         return;
     }
 
-    // Verificar credenciales
+    // Verificar los usuarios y las contraseñas (las credenciales) :)
     boolean accesoConcedido = false;
     String rol = "";
     for (Usuario usuario : usuariosPredefinidos) {
@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
         } else if (rol.equals("Estudiante")) {
             new MenuEstudiante().setVisible(true);
         }
-        this.dispose(); // Cerrar ventana de login
+        this.dispose(); //para cerrar la ventana de login
     } else {
         javax.swing.JOptionPane.showMessageDialog(this, "Credenciales incorrectas.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
     }

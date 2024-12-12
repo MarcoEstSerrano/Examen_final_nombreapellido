@@ -28,9 +28,27 @@ public class Profesor extends Persona {
         return curso;
     }
 
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
     public int getAnio() {
         return anio;
     }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public static ArrayList<Profesor> getListaProfesores() {
+        return listaProfesores;
+    }
+
+    public static void setListaProfesores(ArrayList<Profesor> listaProfesores) {
+        Profesor.listaProfesores = listaProfesores;
+    }
+
+    
 
     public static void agregarProfesor(Profesor profesor) {
         listaProfesores.add(profesor);

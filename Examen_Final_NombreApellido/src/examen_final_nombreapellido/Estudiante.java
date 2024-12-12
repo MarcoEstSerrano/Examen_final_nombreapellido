@@ -11,24 +11,41 @@ public class Estudiante extends Persona {
     private String carrera;
     private static ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
     private int año;
-    public Estudiante(String nombreCompleto, int edad, String carrera) {
-        super(nombreCompleto, edad);
+    Object getaño;
+    public Estudiante(String nombreCompleto, int año, String carrera) {
+        super(nombreCompleto, año);
         if (carrera.isEmpty()) {
-            throw new IllegalArgumentException("La carrera no puede estar vacía.");
+            throw new IllegalArgumentException("La carrera no puede estar vacía."); // misma formula para verificar si estan vacios los espacios
         }
         this.carrera = carrera;
+    }
+
+    public static ArrayList<Estudiante> getListaEstudiantes() {
+        return listaEstudiantes;
+    }
+
+    public static void setListaEstudiantes(ArrayList<Estudiante> listaEstudiantes) {
+        Estudiante.listaEstudiantes = listaEstudiantes;
     }
 
     public String getCarrera() {
         return carrera;
     }
 
-    public static void agregarEstudiante(Estudiante estudiante) {
-        listaEstudiantes.add(estudiante);
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
     }
 
-    public static void listarEstudiantes() {
-        listaEstudiantes.forEach(estudiante -> System.out.println(estudiante.getNombreCompleto()));
+    public Object getGetaño() {
+        return getaño;
+    }
+
+    public void setGetaño(Object getaño) {
+        this.getaño = getaño;
+    }
+
+    public static void agregarEstudiante(Estudiante estudiante) {
+        listaEstudiantes.add(estudiante);
     }
 
     public static void eliminarEstudiante(Estudiante estudiante) {
@@ -36,10 +53,6 @@ public class Estudiante extends Persona {
     }
     
     public void setAño(int año) {
-        this.año = año; // Establece el año de curso
-    }
-
-    Object getAño() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.año = año; // para el año de curso supuestamente
     }
 }

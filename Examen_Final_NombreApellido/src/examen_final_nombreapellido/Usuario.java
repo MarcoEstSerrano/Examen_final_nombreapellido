@@ -7,6 +7,7 @@ public class Usuario {
     private String pass;
     private String rol; // para Administrador o Estudiante
 
+    
     //creamos el constructor, pero este es especial ya que tiene que verificar que la contraseña que se va a añadir
     //tenga 8 digitos para eso existe la opcion de hacerlo con un if PERO añadiendo de una la excepcion.
     public Usuario(String usu, String pass, String rol) {
